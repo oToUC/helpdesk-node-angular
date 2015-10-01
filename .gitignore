@@ -1,0 +1,8 @@
+node_modules/
+package copy.json
+sass/bootstrap
+testData.json
+.idea/
+.sass-cache/
+.DS_Store
+public/.DC_Store

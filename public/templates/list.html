@@ -1,0 +1,76 @@
+<div class="container" ng-init="showData('open');">
+	<div>
+		<h1 class="page-head-line">Ticket Detail</h1>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<input class="form-control" ng-model="searchText" placeholder="search">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<form class="form-holizontal">
+				<div class="form-group">
+					<select class="form-control" name="sort" ng-model="ticket.sort" ng-change="showData(ticket.sort);">
+						<option value="" selected>sort...</option>
+						<option value="close">all close tickets</option>
+						<option value="open">all open tickets</option>
+					</select>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<b>{{tickets.length}}</b>
+			<table class="table table-striped">
+				<thead>
+				<tr>
+					<th>Date</th>
+					<th>Ticket#</th>
+					<th>Name</th>
+					<th>Department</th>
+					<th>Priority</th>
+					<th>Title</th>
+					<th>Status</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="ticket in tickets | filter: searchText | pagination : currentPage*itemsPerPage | limitTo: itemsPerPage">
+					<td>{{ticket.created_at | date: 'MM.dd.yy'}}</td>
+					<td><a href="#/detail/{{ticket._id}}">{{ticket.ticketNum}}</a></td>
+					<td><a href="#/detail/{{ticket._id}}">{{ticket.userName}}</a></td>
+					<td>{{ticket.department}}</td>
+					<td>{{ticket.priority}}</td>
+					<td>{{ticket.title}}</td>
+					<td>{{ticket.status}}</td>
+				</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 centered-text">
+				<ul class="pagination">
+					<li ng-class="DisablePrevPage()">
+						<a href ng-click="prevPage()">&larr; Previous</a>
+					</li>
+					<li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+						<a>{{n+1}}</a>
+					</li>
+					<li ng-class="DisableNextPage()">
+						<a href ng-click="nextPage()">Next &rarr;</a>
+
+					</li>
+				</ul>
+		</div>
+	</div>
+</div>
+
+
+
+

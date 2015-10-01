@@ -1,0 +1,102 @@
+<div class="container">
+    <div>
+        <h1 class="page-head-line">Ticket Detail</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container form-container_narrow">
+                <div class="{{alertClass}}" ng-show="showAlert">{{alertMsg}}</div>
+                <div class="row">
+                    <div class="col-xs-4 col-fixed-200"><b>ticket#:</b></div>
+                    <div class="col-xs-8">{{ticket.ticketNum}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-fixed-200"><b>name:</b></div>
+                    <div class="col-xs-8">{{ticket.userName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-fixed-200"><b>department:</b></div>
+                    <div class="col-xs-8">{{ticket.department}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-fixed-200"><b>type:</b></div>
+                    <div class="col-xs-8">{{ticket.problemType}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-4 col-fixed-200"><b>open date:</b></div>
+                    <div class="col-xs-8">{{ticket.created_at | date: 'MM.dd.yy'}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-fixed-200"><b>priority:</b></div>
+                    <div class="col-xs-8">{{ticket.priority}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-fixed-200"><b>title:</b></div>
+                    <div class="col-xs-8">{{ticket.title}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-fixed-200"><b>description:</b></div>
+                    <div class="col-xs-12 col-md-8 well">{{ticket.description}}</div>
+                </div>
+                <hr/>
+                <form name="detailTicketForm" ng-submit="updateTicket(detailTicketForm.$valid, ticket._id)" novalidate>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">status</label>
+                                <select class="form-control" name="status" ng-model="ticket.status">
+                                    <option value='open' ng-selected="ticket.status == 'open'">open</option>
+                                    <option value='close' ng-selected="ticket.status == 'close'">close</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" ng-class="{ 'has-error' : detailTicketForm.$submitted && detailTicketForm.resolution.$invalid}">
+                                <label class="control-label">problem resolution:</label>
+                                <textarea class="form-control" name="resolution" ng-model="ticket.resolution" required></textarea>
+                                <div role="error">
+                                    <p ng-show="detailTicketForm.$submitted && detailTicketForm.resolution.$error.required" class="help-block">Please enter problem resolution.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <div class="form-group" ng-class="{ 'has-error' : detailTicketForm.$submitted && detailTicketForm.closedDate.$invalid}">
+                                <label class="control-label">close date:</label>
+                                <input type="text" class="form-control" name="closedDate" ng-model="ticket.closedDate" date-picker required />
+                                <div role="error">
+                                    <p ng-show="detailTicketForm.$submitted && detailTicketForm.closedDate.$error.required" class="help-block">Enter close date.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                            <div class="form-group" ng-class="{ 'has-error' : detailTicketForm.$submitted && detailTicketForm.workHours.$invalid}">
+                                <label class="control-label">work hours:</label>
+                                <input type="text" class="form-control" name="workHours" ng-model="ticket.workHours" required />
+                                <div role="error">
+                                    <p ng-show="detailTicketForm.$submitted && detailTicketForm.workHours.$error.required" class="help-block">Enter work hours.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin:0 auto; float:none">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-upload"></span>  Update </a></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

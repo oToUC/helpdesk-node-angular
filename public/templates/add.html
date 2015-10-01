@@ -1,0 +1,107 @@
+<div class="container">
+    <div>
+        <h1 class="page-head-line">Ticket Entry</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container form-container_narrow">
+                <div class="{{alertClass}}" ng-show="showAlert">{{alertMsg}}</div>
+                <form name="ticketEntryForm" ng-submit="add(ticketEntryForm.$valid)" novalidate>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Name -->
+                            <div class="form-group" ng-class="{ 'has-error' : ticketEntryForm.$submitted && ticketEntryForm.userName.$invalid}">
+                                <label class="control-label">name:</label>
+                                <select class="form-control" name="userName" ng-model="newticket.userName" required>
+                                    <option value="" disabled selected>select name</option>
+                                    <option ng-repeat="profile in profiles" value="{{profile.firstName}} {{profile.lastName}}">{{profile.firstName}} {{profile.lastName}}</option>
+                                </select>
+                                <div role="error">
+                                    <p ng-show="ticketEntryForm.$submitted && ticketEntryForm.userName.$error.required" class="help-block">Select your name.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Department -->
+                            <div class="form-group" ng-class="{ 'has-error' : ticketEntryForm.$submitted && ticketEntryForm.department.$invalid}">
+                                <label class="control-label">department</label>
+                                <select class="form-control" name="department" ng-model="newticket.department" required>
+                                    <option value="" disabled selected>select department</option>
+                                    <option ng-repeat="department in departments" value="{{department.name}}">{{department.name}}</option>
+                                </select>
+                                <div role="error">
+                                    <p ng-show="ticketEntryForm.$submitted && ticketEntryForm.department.$error.required" class="help-block">Select your name.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group" ng-class="{ 'has-error' : ticketEntryForm.$submitted && ticketEntryForm.problemType.$invalid}">
+                                <label class="control-label">problem type</label>
+                                <select class="form-control" name="problemType" ng-model="newticket.problemType" required>
+                                    <option>Hardware</option>
+                                    <option>Software</option>
+                                    <option>Network</option>
+                                    <option>Tech Project</option>
+                                    <option>Other</option>
+                                </select>
+                                <div role="error">
+                                    <p ng-show="ticketEntryForm.$submitted && ticketEntryForm.problemType.$error.required" class="help-block">Enter problem type.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group" ng-class="{ 'has-error' : ticketEntryForm.$submitted && ticketEntryForm.priority.$invalid}">
+                                <label class="control-label">priority</label>
+                                <select class="form-control" name="priority" ng-model="newticket.priority" required>
+                                    <option>High</option>
+                                    <option>Medium</option>
+                                    <option>Low</option>
+                                </select>
+                                <div role="error">
+                                    <p ng-show="ticketEntryForm.$submitted && ticketEntryForm.priority.$error.required" class="help-block">Enter priority.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" ng-class="{ 'has-error' : ticketEntryForm.$submitted && ticketEntryForm.title.$invalid}">
+                                <label class="control-label">problem title:</label>
+                                <input type="text" class="form-control" name="title" ng-model="newticket.title" required/>
+                                <div role="error">
+                                    <p ng-show="ticketEntryForm.$submitted && ticketEntryForm.title.$error.required" class="help-block">Enter priority.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">problem description:</label>
+                                <textarea class="form-control" name="description" ng-model="newticket.description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin:0 auto; float:none">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-tags"></span>  Submit Ticket </a></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

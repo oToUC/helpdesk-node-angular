@@ -1,0 +1,29 @@
+remote:        npm ERR! node v4.1.1
+remote:        npm ERR! npm  v2.14.4
+remote:        npm ERR! code EPEERINVALID
+remote:        
+remote:        npm ERR! peerinvalid The package mongoose@4.1.9 does not satisfy its siblings' peerDependencies requirements!
+remote:        npm ERR! peerinvalid Peer mongoose-auto-increment@4.0.0 wants mongoose@~4.0.0
+remote:        
+remote:        npm ERR! Please include the following file with any support request:
+remote:        npm ERR!     /tmp/build_1915accf3d0a47fce37f59a02746ad64/npm-debug.log
+remote: 
+remote: -----> Build failed
+remote:        
+remote:        We're sorry this build is failing! You can troubleshoot common issues here:
+remote:        https://devcenter.heroku.com/articles/troubleshooting-node-deploys
+remote:        
+remote:        Some possible problems:
+remote:        
+remote:        - Node version not specified in package.json
+remote:          https://devcenter.heroku.com/articles/nodejs-support#specifying-a-node-js-version
+remote:        
+remote:        Love,
+remote:        Heroku
+remote:        
+remote: 
+remote:  !     Push rejected, failed to compile Node.js app
+remote: 
+remote: Verifying deploy....
+remote: 
+remote: !	Push rejected to hirokoymj-helpdesk.
