@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Conenct to datebase
-var connection = mongoose.connect('mongodb://localhost:27017/helpdesk');
+var connection = mongoose.connect('mongodb://root:root@ds029814.mongolab.com:29814/heroku_wcpf9fxk');
 //autoIncrement.initialize(connection);
 
 // Schemas
