@@ -1,9 +1,13 @@
 // Module dependencies
 var express = require('express');	// call express
 var bodyParser = require('body-parser');
+/*
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     autoIncrement = require('mongoose-auto-increment');
+*/
+
+var mongoose = require('mongoose');
 var path = require('path');
 
 
@@ -17,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Conenct to datebase
 var connection = mongoose.connect('mongodb://localhost:27017/helpdesk');
-autoIncrement.initialize(connection);
+//autoIncrement.initialize(connection);
 
 // Schemas
 var ticketSchema = mongoose.Schema({
@@ -32,7 +36,7 @@ var ticketSchema = mongoose.Schema({
   closedDate: String,
   resolution: String,
   workHours: String,
-  ticketNum: Number
+//  ticketNum: Number
 });
 
 var profile = mongoose.Schema({
@@ -45,9 +49,8 @@ var department = mongoose.Schema({
 
 
 //Compiling a schema into a Model
-ticketSchema.plugin(autoIncrement.plugin, 'Ticket');
+//ticketSchema.plugin(autoIncrement.plugin, 'Ticket');
 var Ticket = mongoose.model('Ticket', ticketSchema);
-
 var ProfileModel = mongoose.model('Profile', profile);
 var DepartmentModel = mongoose.model('Department', department);
 
@@ -97,6 +100,7 @@ function addTicket(req, res){
   });
 
   // Get next _id
+/*
   ticket.nextCount(function(err, count){
     if(err){
       console.log(err);
@@ -105,7 +109,7 @@ function addTicket(req, res){
       console.log(ticket.ticketNum);
     }
   });
-
+*/
 
   ticket.save(function(err){
     if(err) res.send(err);
