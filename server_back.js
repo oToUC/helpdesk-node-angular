@@ -1,8 +1,15 @@
 // Module dependencies
 var express = require('express');	// call express
 var bodyParser = require('body-parser');
+/*
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
+    autoIncrement = require('mongoose-auto-increment');
+*/
+
 var mongoose = require('mongoose');
 var path = require('path');
+
 
 //Create server
 var app = express();  // define our app using express
@@ -13,11 +20,11 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Conenct to datebase
-var connection = mongoose.connect('mongodb://localhost:27017/helpdesk');
+var connection = mongoose.connect('mongodb://root:root@ds029814.mongolab.com:29814/heroku_wcpf9fxk');
+//autoIncrement.initialize(connection);
 
 // Schemas
 var ticketSchema = mongoose.Schema({
-  ticketNum: Number,
   userName: String,
   department: String,
   problemType: String,
@@ -28,7 +35,8 @@ var ticketSchema = mongoose.Schema({
   status: {type: String, default: 'open'},
   closedDate: String,
   resolution: String,
-  workHours: String
+  workHours: String,
+//  ticketNum: Number
 });
 
 var profile = mongoose.Schema({
@@ -38,26 +46,13 @@ var profile = mongoose.Schema({
 var department = mongoose.Schema({
     name: String
 });
-var Counters = mongoose.Schema({
-  _id: String,
-  next: Number     
-});
-// Added increment funtion in Counters Schema.
-// @definition Model.findByIdAndUpdate(id, [update], [options], [callback])
-// @param [update] - increment 
-// @param [options] 
-// new: true to return the modified document rather than the original. 
-// upsert: creates the object if it doesn't exist.
-// select: sets the document fields to return
-Counters.statics.increment = function (counter, callback) {
-    return this.findByIdAndUpdate(counter, { $inc: { next: 1 } }, {new: true, upsert: true, select: {next: 1}}, callback);
-};
+
 
 //Compiling a schema into a Model
+//ticketSchema.plugin(autoIncrement.plugin, 'Ticket');
 var Ticket = mongoose.model('Ticket', ticketSchema);
 var ProfileModel = mongoose.model('Profile', profile);
 var DepartmentModel = mongoose.model('Department', department);
-var Counter = mongoose.model('counters', Counters);
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -72,6 +67,7 @@ router.put('/api/tickets/:id', updateTicket);
 //router.delete('/api/tichets/:id', deleteContact);
 
 router.get('/api/departments', getDepartments);
+
 
 function getProfiles(req, res){
     ProfileModel.find(function(err, docs){
@@ -88,33 +84,37 @@ function getDepartments(req, res){
 };
 
 
+
+
 /* Tiekct Model */
 function addTicket(req, res){
-		var ticket = new Ticket({
-			userName: req.body.userName,
-			department: req.body.department,
-			problemType: req.body.problemType,
-			priority: req.body.priority,
-			title: req.body.title,
-			description: req.body.description,
-			created_at: new Date(),
-		});
 
-	Counter.increment('ticketId', function (err, result) {
-		if (err) {
-			console.error('Counter auto increment save error: ' + err); return;
-		}
-		console.log("result.next" + result.next);
-		ticket.ticketNum = result.next;
-		console.log("ticket.ticketNum" + ticket.ticketNum);
+  var ticket = new Ticket({
+    userName: req.body.userName,
+    department: req.body.department,
+    problemType: req.body.problemType,
+    priority: req.body.priority,
+    title: req.body.title,
+    description: req.body.description,
+    created_at: new Date(),
+  });
 
-	  ticket.save(function(err){
-		if(err) res.send(err);
-		res.json(ticket);
-	  });
-  
-	});
+  // Get next _id
+/*
+  ticket.nextCount(function(err, count){
+    if(err){
+      console.log(err);
+    } else{
+      ticket.ticketNum = count + 100;
+      console.log(ticket.ticketNum);
+    }
+  });
+*/
 
+  ticket.save(function(err){
+    if(err) res.send(err);
+    res.json(ticket);
+  });
 };
 
 function findAllTickets(req, res){
