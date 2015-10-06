@@ -13,12 +13,12 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Conenct to datebase
-//var connection = mongoose.connect('mongodb://localhost:27017/helpdesk');
-var connection = mongoose.connect('mongodb://root:root@ds029814.mongolab.com:29814/heroku_wcpf9fxk');
+var connection = mongoose.connect('mongodb://localhost:27017/helpdesk');
+//var connection = mongoose.connect('mongodb://root:root@ds029814.mongolab.com:29814/heroku_wcpf9fxk');
 
 // Schemas
 var ticketSchema = mongoose.Schema({
-  ticketNum: Number,
+  ticketId: String,
   userName: String,
   department: String,
   problemType: String,
@@ -91,23 +91,22 @@ function getDepartments(req, res){
 
 /* Tiekct Model */
 function addTicket(req, res){
-		var ticket = new Ticket({
-			userName: req.body.userName,
-			department: req.body.department,
-			problemType: req.body.problemType,
-			priority: req.body.priority,
-			title: req.body.title,
-			description: req.body.description,
-			created_at: new Date(),
-		});
+    var ticket = new Ticket({
+        userName: req.body.userName,
+        department: req.body.department,
+        problemType: req.body.problemType,
+        priority: req.body.priority,
+        title: req.body.title,
+        description: req.body.description,
+        created_at: new Date(),
+    });
 
 	Counter.increment('ticketId', function (err, result) {
 		if (err) {
 			console.error('Counter auto increment save error: ' + err); return;
 		}
-		console.log("result.next" + result.next);
-		ticket.ticketNum = result.next;
-		console.log("ticket.ticketNum" + ticket.ticketNum);
+		ticket.ticketId = pad(result.next, 5);
+		console.log("ticket.ticketNum" + ticket.ticketId);
 
 	  ticket.save(function(err){
 		if(err) res.send(err);
@@ -115,8 +114,13 @@ function addTicket(req, res){
 	  });
   
 	});
-
 };
+// leading zero format for Ticket Id
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
 
 function findAllTickets(req, res){
   Ticket.find({status: req.params.sortKey}).sort({_id: 1, created_at:-1, firstName: 1, }).exec(function(err, docs){

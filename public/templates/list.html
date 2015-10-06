@@ -29,7 +29,7 @@
 				<thead>
 				<tr>
 					<th>Date</th>
-					<th>Ticket#</th>
+					<th>Ticket ID</th>
 					<th>Name</th>
 					<th>Department</th>
 					<th>Priority</th>
@@ -40,7 +40,7 @@
 				<tbody>
 				<tr ng-repeat="ticket in tickets | filter: searchText | pagination : currentPage*itemsPerPage | limitTo: itemsPerPage">
 					<td>{{ticket.created_at | date: 'MM.dd.yy'}}</td>
-					<td><a href="#/detail/{{ticket._id}}">{{ticket.ticketNum}}</a></td>
+					<td><a href="#/detail/{{ticket._id}}">{{ticket.ticketId}}</a></td>
 					<td><a href="#/detail/{{ticket._id}}">{{ticket.userName}}</a></td>
 					<td>{{ticket.department}}</td>
 					<td>{{ticket.priority}}</td>
