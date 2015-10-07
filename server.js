@@ -123,7 +123,7 @@ function pad(num, size) {
 }
 
 function findAllTickets(req, res){
-  Ticket.find({status: req.params.sortKey}).sort({_id: 1, created_at:-1, firstName: 1, }).exec(function(err, docs){
+  Ticket.find({status: req.params.sortKey}).sort({ticketId: -1}).exec(function(err, docs){
     if(err) res.send(err);
     res.json(docs);
   });
