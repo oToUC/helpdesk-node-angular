@@ -5,20 +5,12 @@ This application is IT issue ticket system for a small company and a group. This
 https://hirokoymj-helpdesk.herokuapp.com/
 
 ### Front-End technologies
-- **Bootstrap 3**
-A framework to build a responsive web page. I used "Sticky footer with navbar" template for this application.
-
-- **Angular.js**
-JavaScript MVC framework. With Angular, Helpdesk has a beautiful MVC architecture.
-
-- **Sass**
+- **Bootstrap 3** : a framework to build a responsive web page. this application is used "Sticky footer with navbar" template. 
+- **Angular.js**: JavaScript MVC framework. Helpdesk has a beautiful MVC architecture!!
+- **Sass**: helpdesk-style.css
 The main CSS file was build with SASS and compiled with Grunt.
+- **Grunt** Build tool to compile SASS file.
 
-- **Grunt**
-Build tool. Installed some npm packages when I start working front-end part in this application.
-1) grunt-contrib-watch
-2) grunt-contrib-compass
-3) grunt-contrib-sass 
 
 ### Back-End technologies
 - **Node.js**
