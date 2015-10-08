@@ -12,14 +12,10 @@ This application is IT issue ticket system for a small company and a group. This
 
 
 ### Back-End technologies
-- **Node.js**
-It provides HTTP server and also in package.json, we know the list what kind of software/version this application are using. 
+- **Node.js**: it provides HTTP web server and package.json in which we can see the software lists for this application.
 - **Express.js**
-Back-end framework provides Router REST API, useful functions(body-parser, path, 
-- **MongoDB** - Database without relational table
+- **MongoDB**: Database
 - **mongoose**
-- **Heroku**
-A cloud application platform. Node based application can running on Heroku.
-
+- **Heroku**: Cloud platform to be able to run Node application.
 
 ### Diagram for Helpdesk 
