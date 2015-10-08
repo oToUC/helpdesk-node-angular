@@ -8,7 +8,7 @@ This application is IT issue ticket system for a small company and a group. This
 - **Bootstrap 3** : a framework to build a responsive web page. this application is used "sticky footer with navbar" template. 
 - **Angular.js**: JavaScript MVC framework. Helpdesk has a beautiful MVC architecture!!
 - **Sass**: This application is one custom SASS file called `helpdesk-style.scss`.
-- **Grunt** : With Grunt, SASS file is compilied with CSS file. 
+- **Grunt** : Grunt is compilied SASS with CSS. `helpdesk-style.scss` to `heldesk-style.css`.
 
 
 ### Back-End technologies
