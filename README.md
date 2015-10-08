@@ -22,7 +22,7 @@ This application is IT issue ticket system for a small company and a group. This
 ![Helpdesk Architecture](http://www.hirokoymj.com/images/Git/helpdesk_diagram.png)
 
 ### References:
-- [mongoose auto-increment - 1](http://stackoverflow.com/questions/7334390/has-mongoose-support-findandmodify-mongodb-method)
+- [Has Mongoose support findAndModify Mongodb method?](http://stackoverflow.com/questions/7334390/has-mongoose-support-findandmodify-mongodb-method)
 - [mongoose auto-increment - 2](http://docs.mongodb.org/manual/tutorial/create-an-auto-incrementing-field/)
 - [Highlight Active Menu] (http://coder1.com/articles/angularjs-managing-active-nav-elements)
 - [Pagination - 1](http://stackoverflow.com/questions/13364091/angularjs-custom-filter-errors-due-to-undefined-arrays-and-still-filters-prope)
