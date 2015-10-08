@@ -9,11 +9,16 @@ https://hirokoymj-helpdesk.herokuapp.com/
 A framework to build a responsive web page. This application was used "Sticky footer with navbar" template.
 
 - **Angular.js**
-JavaScript MVC framework. With Angular, Helpdesk has a beautiful MVC in JavaScript.
+JavaScript MVC framework. With Angular, Helpdesk has a beautiful MVC architecture.
 
-- Sass
-- Grunt
-- 
+- **Sass**
+The main CSS file was build with SASS and compiled with Grunt.
+- **Grunt**
+Build tool for Sass. I used following npm package to set up in the begining of the developement.
+- grunt-contrib-watch
+- grunt-contrib-compass
+- grunt-contrib-sass 
+
 ### Front-End technologies in Helpdesk
 - Node.js
 - Express.js
