@@ -1,5 +1,5 @@
 ## helpdesk
-This application is IT issue ticket system for a small company and a group. This single page application is build with MEAN ( MongoDB, Express, Angular, Node) technology and running on [Heroku](https://www.heroku.com/) cloud platform.
+This application is IT issue ticket system for a small company and group and build with MEAN ( MongoDB, Express, Angular, Node) technology and running on [Heroku](https://www.heroku.com/) cloud platform.
 
 ### Live URL 
 **https://hirokoymj-helpdesk.herokuapp.com/**
