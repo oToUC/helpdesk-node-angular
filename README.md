@@ -22,11 +22,11 @@ This application is a IT issue ticket system for a small company and group. It i
 ![Helpdesk Architecture](http://www.hirokoymj.com/images/Git/helpdesk_diagram.png)
 
 ### Generating Test Data
-[JSON GENERATOR](http://www.json-generator.com/) is very useful site and I generated 100 test data at once! The cool  thing is to be able to use `Array`. For example, if deparment value should generated randamly among "IT", "HR" and "Marketing", syntax is following.
+[JSON GENERATOR](http://www.json-generator.com/) is very useful site and I generated 100 test data at once! The cool thing is to be able to use `Array`. For example, if `deparment` value should generated randamly among "IT", "HR" and "Marketing", a syntax is following.
 ```
 department: '{{random("IT", "HR", "Marketing")}}'
 ```
-The test data is very helpful to test when I developed pagination!!
+Test data is very helpful when I developed a pagination in the ticket list page.
 
 ### References:
 - [Has Mongoose support findAndModify Mongodb method?](http://stackoverflow.com/questions/7334390/has-mongoose-support-findandmodify-mongodb-method)
