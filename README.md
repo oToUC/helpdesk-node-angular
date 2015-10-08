@@ -8,7 +8,7 @@ https://hirokoymj-helpdesk.herokuapp.com/
 - **Bootstrap 3**
 Framework to build a responsive web page. This application was used "Sticky footer with navbar" template.
 
-- Angular.js
+- **Angular.js**
 JavaScript MVC framework. With Angular, Helpdesk has a beautiful MVC in JavaScript.
 
 - Sass
