@@ -23,7 +23,7 @@ This application is IT issue ticket system for a small company and a group. This
 
 ### References:
 - [Has Mongoose support findAndModify Mongodb method?](http://stackoverflow.com/questions/7334390/has-mongoose-support-findandmodify-mongodb-method)
-- [mongoose auto-increment - 2](http://docs.mongodb.org/manual/tutorial/create-an-auto-incrementing-field/)
+- [Create an Auto-Incrementing Sequence Field](http://docs.mongodb.org/manual/tutorial/create-an-auto-incrementing-field/)
 - [Highlight Active Menu] (http://coder1.com/articles/angularjs-managing-active-nav-elements)
 - [Pagination - 1](http://stackoverflow.com/questions/13364091/angularjs-custom-filter-errors-due-to-undefined-arrays-and-still-filters-prope)
 - [Pagination - 2](https://gist.github.com/kmaida/06d01f6b878777e2ea34)
