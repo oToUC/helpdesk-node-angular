@@ -19,4 +19,4 @@ This application is IT issue ticket system for a small company and a group. This
 - **Heroku**: Cloud platform to be able to run Node application.
 
 ### Helpdesk Architecture 
-![Helpdesk Architecture](http://www.hirokoymj.com/images/Git/helpdesk-diagram.png)
+![Helpdesk Architecture](http://www.hirokoymj.com/images/Git/helpdesk_diagram.png)
