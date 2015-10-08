@@ -4,7 +4,7 @@ This application is IT issue ticket system for a small company and a group. This
 ### Live URL 
 https://hirokoymj-helpdesk.herokuapp.com/
 
-### Front-End technologies in Helpdesk
+### Front-End technologies
 - **Bootstrap 3**
 A framework to build a responsive web page. I used "Sticky footer with navbar" template for this application.
 
@@ -20,7 +20,7 @@ Build tool. Installed some npm packages when I start working front-end part in t
 2) grunt-contrib-compass
 3) grunt-contrib-sass 
 
-### Back-End technologies in Helpdesk
+### Back-End technologies
 - **Node.js**
 It provides HTTP server and also in package.json, we know the list what kind of software/version this application are using. 
 - **Express.js**
