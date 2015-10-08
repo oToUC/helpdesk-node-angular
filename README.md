@@ -1,5 +1,5 @@
 ## helpdesk
-This application is IT issue ticket system for a small company and a group. This single page application is build with MEAN ( MongoDB, Express, Angular, Node) technology and running on [Heroku](https://www.heroku.com/) server.
+This application is IT issue ticket system for a small company and a group. This single page application is build with MEAN ( MongoDB, Express, Angular, Node) technology and running on [Heroku](https://www.heroku.com/) cloud platform.
 
 ### Live URL 
 https://hirokoymj-helpdesk.herokuapp.com/
@@ -22,10 +22,13 @@ Build tool. Installed some npm packages when I start working front-end part in t
 
 ### Back-End technologies in Helpdesk
 - **Node.js**
-- Express.js
-- MongoDB
-- mongoose
-- Heroku
+It provides HTTP server and also in package.json, we know the list what kind of software/version this application are using. 
+- **Express.js**
+Back-end framework provides Router REST API, useful functions(body-parser, path, 
+- **MongoDB** - Database without relational table
+- **mongoose**
+- **Heroku**
+A cloud application platform. Node based application can running on Heroku.
 
 
 ### Diagram for Helpdesk 
