@@ -21,6 +21,12 @@ This application is a IT issue ticket system for a small company and group. It i
 ### Architecture 
 ![Helpdesk Architecture](http://www.hirokoymj.com/images/Git/helpdesk_diagram.png)
 
+### Generating Test Data
+[JSON GENERATOR](http://www.json-generator.com/) is very useful to generate test data. I generated 100 test data at once! The cool  thing is to be able to use `Array`. For example, if deparment value should generated randamly among "IT", "HR" and "Marketing", syntax is following.
+```
+department: '{{random("IT", "HR", "Marketing")}}'
+```
+
 ### References:
 - [Has Mongoose support findAndModify Mongodb method?](http://stackoverflow.com/questions/7334390/has-mongoose-support-findandmodify-mongodb-method)
 - [Create an Auto-Incrementing Sequence Field](http://docs.mongodb.org/manual/tutorial/create-an-auto-incrementing-field/)
