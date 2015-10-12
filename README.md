@@ -1,5 +1,5 @@
 ## helpdesk
-This application is a IT issue ticket system for a small company and group. It is build with MEAN ( MongoDB, Express, Angular, Node) technology and running on [Heroku](https://www.heroku.com/) cloud server. I developed it to learn Angular.js and could understand Angular key technologies such as Controller, Router, Service, Filter and Directive.
+helpdesk is IT issue ticket system for small companies and groups that is build with MEAN ( MongoDB, Express, Angular, Node). It is running on [Heroku](https://www.heroku.com/) cloud server. I developed it to learn Angular.js and could understand Angular key technologies such as Controller, Router, Service, Filter and Directive.
 
 ### Live URL 
 **https://hirokoymj-helpdesk.herokuapp.com/**
